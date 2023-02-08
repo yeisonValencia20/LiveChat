@@ -1,0 +1,40 @@
+ * {
+    box-sizing: border-box;
+ }
+
+.chatroom {
+    display: flex;
+}
+
+#contactos {
+    flex: 1 1 25%;
+}
+
+.chat {
+    flex: 1 1 75%;
+}
+
+.chat_conversacion, .chat_escribir  {
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+
+.chat_conversacion {
+    min-height: 500px;
+    background-color: rgba(231, 229, 229, 0.925);
+    margin-bottom: 10px;
+}
+
+.chat_escribir {
+    padding: 10px;
+    border: 2px solid #dad1d1;
+    border-radius: 5px;
+    background-color: #f0eded;
+    color: black;
+    font-weight: 700;
+}
+
+.chat_escribir:focus {
+    outline: 2px solid rgb(1, 125, 241);
+}

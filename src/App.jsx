@@ -1,4 +1,4 @@
-import { ChatRoom } from "./components/ChatRoom"
+import { ChatRoom } from './components/ChatRoom';
 
 export const App = () => {
     return (

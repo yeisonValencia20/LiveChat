@@ -16,7 +16,7 @@ export const useSocket = () => {
         socket.on('disconnect', () => {
             console.log('se desconecto')
             setConectado(false);
-        })
+        });
 
         socket.emit('saludo', { msg: 'hola me conecte a ti' }, (mensaje) => {
             console.log(mensaje)
