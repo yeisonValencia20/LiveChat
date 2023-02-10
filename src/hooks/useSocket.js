@@ -7,6 +7,13 @@ export const useSocket = () => {
 
     const [conectado, setConectado] = useState(false);
 
+    const emitMessage = ( message ) => {
+        console.log(message)
+        socket.emit('message', { msg: message, user: 'Yeison' }, ( payload ) => {
+            console.log(payload);
+        });
+    }
+
     useEffect(() => {
 
         socket.on('connect', () => {
@@ -14,19 +21,17 @@ export const useSocket = () => {
         });
 
         socket.on('disconnect', () => {
-            console.log('se desconecto')
             setConectado(false);
         });
 
-        socket.emit('saludo', { msg: 'hola me conecte a ti' }, (mensaje) => {
-            console.log(mensaje)
-        });
-
         return () => {
-            socket.off('connection');
+            socket.off('connect');
         }
     }, []);
 
-    return conectado;
+    return { 
+        conectado,
+        emitMessage
+    };
 }
 

@@ -1,14 +1,19 @@
 import React from 'react'
 
-import { Chat } from './Chat';
+import { Chat, Contacts } from './';
 import { useSocket } from '../hooks/useSocket'
 import '../styles/chatroom.css';
 
 export const ChatRoom = () => {
     
-    const conectado = useSocket();
+    const { conectado, emitMessage } = useSocket();
 
     return (
-        <Chat />
+        <div className='chatroom'>
+            <Contacts />
+            <Chat 
+                emitMessage={emitMessage}
+            />
+        </div>
     )
 }

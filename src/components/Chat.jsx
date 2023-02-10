@@ -2,32 +2,29 @@
 import { useForm } from '../hooks/useForm';
 import '../styles/chat.css';
 
-export const Chat = () => {
+export const Chat = ({ emitMessage }) => {
 
-    const { form: { chat_input }, handleChange } = useForm({ chat_input: '' });
+    const { form: { chat_input }, handleChange, resetValue } = useForm({ chat_input: '' });
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(event.target)
+        emitMessage(chat_input);
+        resetValue();
     }
 
     return (
-        <div className='chatroom'>
-            <div id="contactos">
-
-            </div>
-            <div className='chat'>
-                <div className='chat_conversacion'></div>
-                <form onSubmit={ handleSubmit }>
-                    <input 
-                        type='text'
-                        name='chat_input' 
-                        className='chat_escribir'
-                        value={ chat_input }
-                        onChange={ handleChange }
-                    />
-                </form>
-            </div>
+        <div className="chat">
+            <div className="chat_conversacion"></div>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="chat_input"
+                    className="chat_escribir"
+                    value={chat_input}
+                    onChange={handleChange}
+                    autoComplete="off"
+                />
+            </form>
         </div>
     )
 }
