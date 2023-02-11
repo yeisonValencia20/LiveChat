@@ -1,0 +1,88 @@
+:root {
+    --main-color: #08dce4;
+    --second-color: #252525;
+  }
+  
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.3), 2px 2px 8px rgb(0, 0, 0, 0.23);
+}
+
+.card_title {
+    margin: 5px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 40px;
+    user-select: none;
+    color: var(--main-color);
+}
+
+.form_field {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: var(--second-color);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.form_label {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--second-color);
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn--blue {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.mb-2 {
+    margin-bottom: 2px;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.form_field:focus {
+    outline: none;
+    border-color: rgb(0, 255, 234);
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
