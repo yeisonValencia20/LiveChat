@@ -8,7 +8,7 @@ export const Chat = ({ emitMessage }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        emitMessage(chat_input);
+        emitMessage('63e6ffdbedbf0a0ef41fc4cc', chat_input);
         resetValue();
     }
 

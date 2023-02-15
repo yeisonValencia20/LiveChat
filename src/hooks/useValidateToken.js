@@ -16,16 +16,16 @@ export const useValidateToken = () => {
         })
         .then( resp => { 
             if (resp.status === 200) {
-                console.log('token valido');
+                console.log('valid token');
                 setValid(true);
             }
             else {
-                console.log('token invalido');
+                console.log('invalid token');
                 setValid(false);
             }
          })
          .catch( error => {
-            console.log('token invalido');
+            console.log('invalid token');
          });
     }, []);
 

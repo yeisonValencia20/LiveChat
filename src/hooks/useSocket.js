@@ -4,19 +4,13 @@ import io from 'socket.io-client';
 let socket = null; // se puede tambien io.connect('http://localhost:8080')
 
 export const useSocket = () => {
-
     const [conectado, setConectado] = useState(false);
 
-    const emitMessage = ( message, uid ) => {
-        socket.emit('message', { msg: message, user: 'Yeison' }, ( payload ) => {
-            const chatWindow = document.querySelector('.chat_conversacion');
-            console.log(chatWindow);
-            chatWindow.innerHTML += `<p><strong>${payload.user}</strong> ${payload.msg}</p>`;
-        });
+    const emitMessage = ( uid, message ) => {
+        socket.emit('message', { uid, message });
     }
 
     useEffect(() => {
-
         socket = io('http://localhost:8080', {
             'extraHeaders': {
                 'x-token': localStorage.getItem('token')
@@ -31,8 +25,16 @@ export const useSocket = () => {
             setConectado(false);
         });
 
+        socket.on('private-message', ({ name, message }) => {
+            const chatWindow = document.querySelector('.chat_conversacion');
+            chatWindow.innerHTML += `<p><strong>${name}</strong> ${message}</p>`;
+        });
+
         return () => {
             socket.off('connect');
+            socket.off('disconnect');
+            socket.off('private-message');
+            socket.off('message');
         }
     }, []);
 

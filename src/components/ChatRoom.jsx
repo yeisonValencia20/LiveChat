@@ -9,7 +9,6 @@ import '../styles/chatroom.css';
 export const ChatRoom = ({ valid }) => {
     
     const { conectado, emitMessage } = useSocket();
-
     return valid
         ? 
             (<div className='chatroom'>
