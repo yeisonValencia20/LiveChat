@@ -6,7 +6,7 @@ export const useValidateToken = () => {
     const [valid, setValid] = useState(false);
 
     useEffect(() => {
-        const { token } = JSON.parse(localStorage.getItem('token')) || { token: '' };
+        const token = localStorage.getItem('token') || { token: '' };
     
         fetch('http://localhost:8080/users/tokenvalidation', {
             headers: {

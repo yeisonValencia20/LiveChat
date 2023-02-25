@@ -1,18 +1,25 @@
 
 import '../styles/people.css';
 
-export const People = ({ people }) => {
-    return (
-        <div className="box">
+export const People = ({ users, handleChatSelected }) => {
+    return(
+        <>
             {
-                people.map( person => {
+                users.map( person => {
                     return (
-                        <span key={person.id} className="name">
-                            {person.name}
-                        </span>
+                        <div 
+                            className="box" 
+                            id={person.id} 
+                            key={person.id} 
+                            onClick={() => handleChatSelected(person.id)}
+                        >
+                            <span className="name">
+                                {person.name}
+                            </span>
+                        </div>
                     )
                 })
             }
-        </div>
+        </>        
     )
 }

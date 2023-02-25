@@ -31,6 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.27"],\
             ["@types/react-dom", "npm:18.0.10"],\
             ["@vitejs/plugin-react", "virtual:9a2762f21101feb58e585eb49a397015bd502cb13dfcbb9222f0721fb1efd17ea9fdb421afc22a06e3fe49c948508508e8a65dbf85c3f0728070819d77fb5a00#npm:3.0.1"],\
+            ["nanoid", "npm:4.0.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:9a2762f21101feb58e585eb49a397015bd502cb13dfcbb9222f0721fb1efd17ea9fdb421afc22a06e3fe49c948508508e8a65dbf85c3f0728070819d77fb5a00#npm:18.2.0"],\
             ["react-router-dom", "virtual:9a2762f21101feb58e585eb49a397015bd502cb13dfcbb9222f0721fb1efd17ea9fdb421afc22a06e3fe49c948508508e8a65dbf85c3f0728070819d77fb5a00#npm:6.8.1"],\
@@ -1479,6 +1480,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.27"],\
             ["@types/react-dom", "npm:18.0.10"],\
             ["@vitejs/plugin-react", "virtual:9a2762f21101feb58e585eb49a397015bd502cb13dfcbb9222f0721fb1efd17ea9fdb421afc22a06e3fe49c948508508e8a65dbf85c3f0728070819d77fb5a00#npm:3.0.1"],\
+            ["nanoid", "npm:4.0.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:9a2762f21101feb58e585eb49a397015bd502cb13dfcbb9222f0721fb1efd17ea9fdb421afc22a06e3fe49c948508508e8a65dbf85c3f0728070819d77fb5a00#npm:18.2.0"],\
             ["react-router-dom", "virtual:9a2762f21101feb58e585eb49a397015bd502cb13dfcbb9222f0721fb1efd17ea9fdb421afc22a06e3fe49c948508508e8a65dbf85c3f0728070819d77fb5a00#npm:6.8.1"],\
@@ -1687,6 +1689,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/nanoid-npm-3.3.4-3d250377d6-2fddd6dee9.zip/node_modules/nanoid/",\
           "packageDependencies": [\
             ["nanoid", "npm:3.3.4"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:4.0.1", {\
+          "packageLocation": "./.yarn/cache/nanoid-npm-4.0.1-d3abfa88f9-21022a7910.zip/node_modules/nanoid/",\
+          "packageDependencies": [\
+            ["nanoid", "npm:4.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\

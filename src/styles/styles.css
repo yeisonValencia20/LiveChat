@@ -1,0 +1,15 @@
+:root {
+    --main-color: #08dce4;
+    --second-color: #252525;
+    --background-color: #f1f1f1;
+    --content-color: #fff;
+    --main-dark-color: #0893e4;
+    --second-dark-color: #474545;;
+  }
+
+.button {
+  padding: 15px 25px;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+}

@@ -3,8 +3,8 @@ import io from 'socket.io-client';
 
 let socket = null; // se puede tambien io.connect('http://localhost:8080')
 
-export const useSocket = () => {
-    const [conectado, setConectado] = useState(false);
+export const useSocket = (handleMessages) => {
+    const [usersConnected, setUsersConnected] = useState([]);
 
     const emitMessage = ( uid, message ) => {
         socket.emit('message', { uid, message });
@@ -17,29 +17,27 @@ export const useSocket = () => {
             }
         });
 
-        socket.on('connect', () => {
-            setConectado(true);
+        socket.on('users-connected', ( user ) => {
+            setUsersConnected(user);
         });
 
         socket.on('disconnect', () => {
-            setConectado(false);
+            console.log('disconnected');
         });
 
         socket.on('private-message', ({ name, message }) => {
-            const chatWindow = document.querySelector('.chat_conversacion');
-            chatWindow.innerHTML += `<p><strong>${name}</strong> ${message}</p>`;
+            // const chatWindow = document.querySelector('.chat_conversacion');
+            // chatWindow.innerHTML += `<p className="chat_message--receive"><strong>${name}</strong> ${message}</p>`;
+            handleMessages(message, name, true)
         });
 
         return () => {
-            socket.off('connect');
-            socket.off('disconnect');
-            socket.off('private-message');
-            socket.off('message');
+            socket.disconnect();
         }
     }, []);
 
     return { 
-        conectado,
+        usersConnected,
         emitMessage
     };
 }

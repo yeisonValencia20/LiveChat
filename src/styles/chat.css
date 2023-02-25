@@ -8,24 +8,44 @@
 }
 
 .chat_conversacion, .chat_escribir  {
-    width: 80%;
+    width: 100%;
     margin: auto;
     display: block;
 }
 
 .chat_conversacion {
-    min-height: 500px;
-    background-color: rgba(231, 229, 229, 0.925);
+    height: 500px;
+    max-height: 500px;
+    background-color: var(--content-color);
     margin-bottom: 10px;
+    border: 1px solid var(--main-color);
+    padding: 0px 10px;
+    overflow-y: auto;
 }
 
 .chat_escribir {
     padding: 10px;
     border: 2px solid #dad1d1;
     border-radius: 5px;
-    background-color: #f0eded;
+    background-color: var(--content-color);
     color: black;
     font-weight: 700;
+    border: 1px solid var(--main-color);
+}
+
+.chat_message {
+    padding: 8px;
+    margin-top: 1rem;
+    color: white;
+}
+
+.chat_message--send {
+    background-color: var(--second-dark-color);
+    text-align: right;
+}
+
+.chat_message--receive {
+    background-color: var(--main-dark-color);
 }
 
 .chat_escribir:focus {

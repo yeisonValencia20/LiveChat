@@ -20,9 +20,14 @@ export const Login = ({ valid, handleLogin }) => {
           })
         })
         .then( resp => resp.json() )
-        .then(( data ) => {
-            localStorage.setItem('token', JSON.stringify(data));
-            handleLogin();
+        .then(({ token }) => {
+            if (token) {
+                localStorage.setItem('token', token);
+                handleLogin();
+            }
+            else {
+                alert('No token');
+            }
         });
     }
 

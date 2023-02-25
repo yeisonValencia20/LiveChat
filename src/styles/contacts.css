@@ -1,4 +1,5 @@
 
 #contactos {
     flex: 1 1 25%;
+    max-width: 25%;
 }

@@ -1,11 +1,8 @@
-:root {
-    --main-color: #08dce4;
-    --second-color: #252525;
-  }
 
 body {
-    background-color: var(--main-color);
+    background-color: var( --background-color);
     font-family: 'Roboto', sans-serif;
+    padding: 8px;
 }
 
 .chatroom {

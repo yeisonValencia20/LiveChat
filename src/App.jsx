@@ -5,16 +5,18 @@ import { ChatRoom } from './components/ChatRoom';
 
 import { useValidateToken } from './hooks/useValidateToken';
 
+import './styles/styles.css';
+
 export const App = () => {
     const { valid, handleLogin } = useValidateToken();
 
     return (
         <Routes>
-            <Route 
+            <Route
                 path='/login'
                 element={<Login valid={valid} handleLogin={handleLogin} />}
             />
-            <Route 
+            <Route
                 path='/*'
                 element={<ChatRoom valid={valid} />}
             />
